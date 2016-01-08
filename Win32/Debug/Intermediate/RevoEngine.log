@@ -1,0 +1,7 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (D:\Developer\NewGameProgrammerShow\RevoEngine\Project\RevoEngine\Win32\Debug\Intermediate\) contains files shared from another project (glew_shared.vcxproj, SDL2.vcxproj, SDL2main.vcxproj, TestingRevoEngine.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  stdafx.cpp
+  dllmain.cpp
+  RevoEngine.cpp
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (D:\Developer\NewGameProgrammerShow\RevoEngine\Project\RevoEngine\Win32\Debug\Intermediate\) contains files shared from another project (glew_shared.vcxproj, RevoEngine.vcxproj, SDL2.vcxproj, TestingRevoEngine.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     Creating library D:\Developer\NewGameProgrammerShow\RevoEngine\Project\RevoEngine\Win32\Debug\RevoEngine.lib and object D:\Developer\NewGameProgrammerShow\RevoEngine\Project\RevoEngine\Win32\Debug\RevoEngine.exp
+  RevoEngine.vcxproj -> D:\Developer\NewGameProgrammerShow\RevoEngine\Project\RevoEngine\Win32\Debug\RevoEngine.dll

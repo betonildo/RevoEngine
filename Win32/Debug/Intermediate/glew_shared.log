@@ -1,0 +1,4 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (D:\Developer\NewGameProgrammerShow\RevoEngine\Project\RevoEngine\\Win32\Debug\Intermediate\) contains files shared from another project (RevoEngine.vcxproj, SDL2.vcxproj, SDL2main.vcxproj, TestingRevoEngine.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  glew.c
+     Creating library ..\..\lib\Debug\Win32\glew.lib and object ..\..\lib\Debug\Win32\glew.exp
+  glew_shared.vcxproj -> D:\Developer\NewGameProgrammerShow\RevoEngine\Project\RevoEngine\\Win32\Debug\glew.dll

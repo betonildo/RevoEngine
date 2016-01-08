@@ -1,0 +1,15 @@
+﻿  RevoEngine.cpp
+d:\developer\newgameprogrammershow\revoengine\project\revoengine\revoengine.cpp(4): warning C4627: '#include <SDL.h>': skipped when looking for precompiled header use
+  d:\developer\newgameprogrammershow\revoengine\project\revoengine\revoengine.cpp(4): note: Add directive to 'stdafx.h' or rebuild precompiled header
+d:\developer\newgameprogrammershow\revoengine\project\revoengine\revoengine.cpp(5): warning C4627: '#include <common_headers.h>': skipped when looking for precompiled header use
+  d:\developer\newgameprogrammershow\revoengine\project\revoengine\revoengine.cpp(5): note: Add directive to 'stdafx.h' or rebuild precompiled header
+d:\developer\newgameprogrammershow\revoengine\project\revoengine\revoengine.cpp(24): error C2065: 'SDL_INIT_EVERYTHING': undeclared identifier
+d:\developer\newgameprogrammershow\revoengine\project\revoengine\revoengine.cpp(24): error C3861: 'SDL_Init': identifier not found
+d:\developer\newgameprogrammershow\revoengine\project\revoengine\revoengine.cpp(25): error C2039: 'cout': is not a member of 'std'
+  d:\developer\newgameprogrammershow\revoengine\project\revoengine\predefined c++ types (compiler internal)(208): note: see declaration of 'std'
+d:\developer\newgameprogrammershow\revoengine\project\revoengine\revoengine.cpp(25): error C2065: 'cout': undeclared identifier
+d:\developer\newgameprogrammershow\revoengine\project\revoengine\revoengine.cpp(25): error C2039: 'endl': is not a member of 'std'
+  d:\developer\newgameprogrammershow\revoengine\project\revoengine\predefined c++ types (compiler internal)(208): note: see declaration of 'std'
+d:\developer\newgameprogrammershow\revoengine\project\revoengine\revoengine.cpp(25): error C2065: 'endl': undeclared identifier
+d:\developer\newgameprogrammershow\revoengine\project\revoengine\revoengine.cpp(28): error C3861: 'SDL_Delay': identifier not found
+d:\developer\newgameprogrammershow\revoengine\project\revoengine\revoengine.cpp(29): error C3861: 'SDL_Quit': identifier not found
