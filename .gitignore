@@ -1,0 +1,5 @@
+# folders
+Win32/
+Debug/
+*.pfd
+*.spf
