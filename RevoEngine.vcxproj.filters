@@ -30,6 +30,12 @@
     <ClInclude Include="common_headers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\WindowSDL2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -39,6 +45,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\WindowSDL2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
