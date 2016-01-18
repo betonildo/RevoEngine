@@ -146,13 +146,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="common_headers.h" />
     <ClInclude Include="RevoEngine.h" />
-    <ClInclude Include="src\Core\Window.h" />
-    <ClInclude Include="src\Core\WindowSDL2.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -172,8 +167,6 @@
       </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="RevoEngine.cpp" />
-    <ClCompile Include="src\Core\Window.cpp" />
-    <ClCompile Include="src\Core\WindowSDL2.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -191,6 +184,10 @@
     <ProjectReference Include="external\SDL2-2.0.4\VisualC\SDL\SDL.vcxproj">
       <Project>{81ce8daf-ebb2-4761-8e45-b71abcca8c68}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

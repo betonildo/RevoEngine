@@ -3,8 +3,6 @@
 
 #include "stdafx.h"
 #include "RevoEngine.h"
-#include "src/Core/Window.h"
-#include "src/Core/WindowSDL2.h"
 
 
 // This is an example of an exported variable
@@ -20,14 +18,7 @@ REVOENGINE_API int fnRevoEngine(void)
 // see RevoEngine.h for the class definition
 CRevoEngine::CRevoEngine()
 {
-	revo::Window::SetService(new revo::WindowSDL2());
-	revo::Window* window = revo::Window::BuildService("Revo Engine Title", 800, 600);
-
-
-	while (!window->Closed()) {
-
-		window->Update();
-	}
+	
 
     return;
 }

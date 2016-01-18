@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>832</x>
+      <y>312</y>
+      <w>288</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>revo::Window
+--
+//Update the render buffer
++update():void
+//Check if the window was closed
++closed():bool
+//Create a new window
++create(title:string, width:int, height:int) : revo::Window*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>448</x>
+      <y>56</y>
+      <w>336</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>revo::ServiceProvider
+--
+// store window service
+-mWindowService:revo::Window*
+// store core services
+-mCoreServices:std::vector&lt;revo::CoreService&gt;
+--
+// set the windowing service
++setWindowService(windowService:revo::Window*):void
+// use window core service
++createWindow(title:string,width:int,height:int):revo::Window*
+// add a new core service
++addCoreService(coreService:revo::CoreService):void
+// initialize all core services
++initCoreServices():void
+// terminate all core services initialized
++terminateCoreServices():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>776</x>
+      <y>88</y>
+      <w>200</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;10.0;230.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>72</y>
+      <w>112</w>
+      <h>272</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0;10.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>328</y>
+      <w>112</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>revo::CoreService
+--
++initialize():void
++terminate():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>224</x>
+      <y>200</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Core services
+don't have
+external use
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>248</y>
+      <w>64</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>60.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>320</y>
+      <w>184</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>//This class implements
+//the core service
+//adaptition to use SDL2
+//system.
+revo::adapter::CoreServiceSDL2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>336</y>
+      <w>144</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>376</y>
+      <w>184</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>//This class implements
+//the core service
+//adaptition to use GLEW.
+revo::adapter::CoreServiceGLEW
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>360</y>
+      <w>144</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>312</y>
+      <w>184</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>//This class implements
+//the window creation
+//handled by SDL2 as an
+//adapted service.
+revo::adapter::WindowSDL2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>328</y>
+      <w>144</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

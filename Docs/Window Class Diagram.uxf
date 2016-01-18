@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>120</y>
+      <w>310</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Window
+--
+//Update the render buffer
+update():void
+//Check if the window was closed
+closed():bool
+//Create a new window
+create(title:string, width:int, height:int) : Window*</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
