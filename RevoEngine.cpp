@@ -5,20 +5,39 @@
 #include "RevoEngine.h"
 
 
-// This is an example of an exported variable
-REVOENGINE_API int nRevoEngine=0;
-
-// This is an example of an exported function.
-REVOENGINE_API int fnRevoEngine(void)
-{
-    return 42;
-}
 
 // This is the constructor of a class that has been exported.
 // see RevoEngine.h for the class definition
 CRevoEngine::CRevoEngine()
 {
-	
+	mServices.addCoreService(new revo::adapter::CoreServiceSDL2());
+	mServices.addCoreService(new revo::adapter::CoreServiceGLEW());
+	mServices.setWindowService(new revo::adapter::WindowSDL2());	
 
     return;
+}
+
+void CRevoEngine::initSystem()
+{
+	mServices.initCoreServices();
+	mWindow = mServices.createWindow("RevoEngine", 800, 600);
+
+}
+
+void CRevoEngine::handleUpdate(std::function<void()> onUpdate)
+{
+	mOnUpdate = onUpdate;
+}
+
+int CRevoEngine::run()
+{
+
+	while (!mWindow->closed()) {
+		if (mOnUpdate) mOnUpdate();
+		mWindow->update();
+	}
+
+	mServices.terminateCoreServices();
+
+	return 0;
 }

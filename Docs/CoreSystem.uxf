@@ -4,25 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>832</x>
-      <y>312</y>
-      <w>288</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes>revo::Window
---
-//Update the render buffer
-+update():void
-//Check if the window was closed
-+closed():bool
-//Create a new window
-+create(title:string, width:int, height:int) : revo::Window*</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>448</x>
+      <x>464</x>
       <y>56</y>
       <w>336</w>
       <h>120</h>
@@ -43,13 +25,14 @@
 // initialize all core services
 +initCoreServices():void
 // terminate all core services initialized
-+terminateCoreServices():void</panel_attributes>
++terminateCoreServices():void
+// set </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>776</x>
+      <x>792</x>
       <y>88</y>
       <w>200</w>
       <h>240</h>
@@ -60,7 +43,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>352</x>
+      <x>368</x>
       <y>72</y>
       <w>112</w>
       <h>272</h>
@@ -71,12 +54,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>304</x>
+      <x>320</x>
       <y>328</y>
       <w>112</w>
-      <h>64</h>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>revo::CoreService
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+revo::CoreService
 --
 +initialize():void
 +terminate():void</panel_attributes>
@@ -85,7 +69,7 @@
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>224</x>
+      <x>240</x>
       <y>200</y>
       <w>112</w>
       <h>56</h>
@@ -99,7 +83,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>272</x>
+      <x>288</x>
       <y>248</y>
       <w>64</w>
       <h>96</h>
@@ -110,7 +94,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>80</x>
+      <x>96</x>
       <y>320</y>
       <w>184</w>
       <h>24</h>
@@ -126,7 +110,7 @@ revo::adapter::CoreServiceSDL2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>176</x>
+      <x>192</x>
       <y>336</y>
       <w>144</w>
       <h>32</h>
@@ -137,7 +121,7 @@ revo::adapter::CoreServiceSDL2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>80</x>
+      <x>96</x>
       <y>376</y>
       <w>184</w>
       <h>24</h>
@@ -152,7 +136,7 @@ revo::adapter::CoreServiceGLEW
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>176</x>
+      <x>192</x>
       <y>360</y>
       <w>144</w>
       <h>32</h>
@@ -163,7 +147,7 @@ revo::adapter::CoreServiceGLEW
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>624</x>
+      <x>640</x>
       <y>312</y>
       <w>184</w>
       <h>24</h>
@@ -179,12 +163,31 @@ revo::adapter::WindowSDL2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>704</x>
+      <x>720</x>
       <y>328</y>
       <w>144</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>160.0;20.0;10.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>848</x>
+      <y>312</y>
+      <w>288</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+revo::Window
+--
+//Update the render buffer
++update():void
+//Check if the window was closed
++closed():bool
+//Create a new window
++create(title:string, width:int, height:int) : revo::Window*</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
