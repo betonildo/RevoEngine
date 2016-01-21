@@ -18,10 +18,10 @@ namespace revo {
 		this->mWindowService = windowService;
 	}
 
-	Window * ServiceProvider::createWindow(std::string title, int width, int height)
+	Window * ServiceProvider::createWindow(std::string title, int width, int height, int flags)
 	{
 		try {
-			return this->mWindowService->create(title, width, height);
+			return this->mWindowService->create(title, width, height, flags);
 		}
 		catch (std::exception ex) {
 			std::cerr << "Window service is NULL yet." << std::endl;
@@ -39,10 +39,21 @@ namespace revo {
 	}
 
 
+	void ServiceProvider::initCoreService(CoreService * coreService)
+	{
+		// not nulll
+		if (coreService) {
+			this->mCoreServices.push_back(coreService);
+			if (!coreService->hasInitialized())
+				coreService->initialize();
+		}
+	}
+
 	void ServiceProvider::initCoreServices()
 	{
 		for (int i = 0; i < this->mCoreServices.size(); i++) {
-			this->mCoreServices[i]->initialize();
+			if(!this->mCoreServices[i]->hasInitialized())
+				this->mCoreServices[i]->initialize();
 		}
 	}
 
@@ -51,6 +62,20 @@ namespace revo {
 		for (int i = 0; i < this->mCoreServices.size(); i++) {
 			this->mCoreServices[i]->terminate();
 		}
+	}
+
+	void ServiceProvider::setContext(Context * context)
+	{
+		this->mContext = context;
+	}
+
+	Context * ServiceProvider::getContext()
+	{
+		if (this->mContext == NULL) {
+			throw new std::exception("Context is NULL");
+		}
+
+		return this->mContext;
 	}
 }
 

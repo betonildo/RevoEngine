@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="CRevoEngine" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAEAgAAAAAEQAAAAAAAAAQAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>RevoEngine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="revo::Context" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAEAABAAAAAABAAAAAAAAEACAAAACAAAAgQAAAAA=</HashCode>
+      <FileName>src\Core\Context.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="revo::CoreService" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACEAgAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>src\Core\CoreService.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="revo::ServiceProvider" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACEgAAAAAAAAAACAAAEAAACAAIQAAiAAQAAAAAgAAA=</HashCode>
+      <FileName>src\Core\ServiceProvider.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="revo::Window" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBAAAAEAAA=</HashCode>
+      <FileName>src\Core\Window.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="revo::adapter::ContextOpenGL" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAEAABAAAAAABAAAAAAAAEACACAACAAAAgQAAAAg=</HashCode>
+      <FileName>src\Core\Specific\ContextOpenGL.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="revo::adapter::CoreServiceGLEW" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAABCEAgAACAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>src\Core\Specific\CoreServiceGLEW.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="revo::adapter::CoreServiceOpenGL" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAABCEAgAAAAAAAAAAAAAAAAAAABCA=</HashCode>
+      <FileName>src\Core\Specific\CoreServiceOpenGL.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="revo::adapter::CoreServiceSDL2" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAABCEAgAAAAAAAQAAAAAAAAAAABAA=</HashCode>
+      <FileName>src\Core\Specific\CoreServiceSDL2.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="revo::adapter::WindowSDL2" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AiAQAAAAAAAABAAAAgAAAAAAAABAAAgAAIBAAAAEAAI=</HashCode>
+      <FileName>src\Core\Specific\WindowSDL2.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="revo::graphics::Shader" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>src\Graphics\Shader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="revo::utils::File" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAECAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\Utils\File.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="revo::utils::GLErrorCheck" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\Utils\GLErrorCheck.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="revo::Flags" Collapsed="true">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="revo::Flags::__unnamed_enum_029d_1">
+        <TypeIdentifier>
+          <NewMemberFileName>src\Core\AdaptedEnumerations.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>src\Core\AdaptedEnumerations.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

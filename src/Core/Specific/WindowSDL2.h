@@ -23,7 +23,8 @@ namespace revo {
 			// Inherited via Window
 			virtual void update() override;
 			virtual bool closed() override;
-			virtual Window * create(std::string title, int width, int height) override;
+			virtual Window * create(std::string title, int width, int height, int flags = 0) override;
+			
 		};
 	}
 }

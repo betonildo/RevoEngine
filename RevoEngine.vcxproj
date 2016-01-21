@@ -148,12 +148,20 @@
   <ItemGroup>
     <ClInclude Include="common_headers.h" />
     <ClInclude Include="RevoEngine.h" />
+    <ClInclude Include="src\Core\AdaptedEnumerations.h" />
+    <ClInclude Include="src\Core\Context.h" />
     <ClInclude Include="src\Core\CoreService.h" />
     <ClInclude Include="src\Core\ServiceProvider.h" />
+    <ClInclude Include="src\Core\Specific\ContextOpenGL.h" />
     <ClInclude Include="src\Core\Specific\CoreServiceGLEW.h" />
+    <ClInclude Include="src\Core\Specific\CoreServiceOpenGL.h" />
     <ClInclude Include="src\Core\Specific\CoreServiceSDL2.h" />
     <ClInclude Include="src\Core\Specific\WindowSDL2.h" />
     <ClInclude Include="src\Core\Window.h" />
+    <ClInclude Include="definitions.h" />
+    <ClInclude Include="src\Graphics\Shader.h" />
+    <ClInclude Include="src\Utils\File.h" />
+    <ClInclude Include="src\Utils\GLErrorCheck.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -174,9 +182,14 @@
     </ClCompile>
     <ClCompile Include="RevoEngine.cpp" />
     <ClCompile Include="src\Core\ServiceProvider.cpp" />
+    <ClCompile Include="src\Core\Specific\ContextOpenGL.cpp" />
     <ClCompile Include="src\Core\Specific\CoreServiceGLEW.cpp" />
+    <ClCompile Include="src\Core\Specific\CoreServiceOpenGL.cpp" />
     <ClCompile Include="src\Core\Specific\CoreServiceSDL2.cpp" />
     <ClCompile Include="src\Core\Specific\WindowSDL2.cpp" />
+    <ClCompile Include="src\Graphics\Shader.cpp" />
+    <ClCompile Include="src\Utils\File.cpp" />
+    <ClCompile Include="src\Utils\GLErrorCheck.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -197,6 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+    <None Include="ClassDiagram.cd" />
     <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

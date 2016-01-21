@@ -4,6 +4,7 @@
 //
 
 #pragma once
+
 #include "common_headers.h"
 #include "targetver.h"
 

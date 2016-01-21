@@ -26,6 +26,10 @@ namespace revo {
 					break;
 				}
 			}
+
+			// TODO: Make this more portable
+			// swap buffers
+			SDL_GL_SwapWindow(this->mWindow);
 		}
 
 		bool WindowSDL2::closed()
@@ -33,7 +37,7 @@ namespace revo {
 			return this->mClosed;
 		}
 
-		Window * WindowSDL2::create(std::string title, int width, int height)
+		Window * WindowSDL2::create(std::string title, int width, int height, int flags)
 		{
 			///store values
 			this->mTitle = title;
@@ -41,7 +45,11 @@ namespace revo {
 			this->mHeight = height;
 
 			// creates sdl2 window
-			this->mWindow = SDL_CreateWindow(this->mTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+			this->mWindow = SDL_CreateWindow(this->mTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, flags);			
+
+			//testing context creation
+			SDL_GLContext context = SDL_GL_CreateContext(this->mWindow);
+			
 
 			return this;
 		}

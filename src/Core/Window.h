@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-
+#include <src\Core\Context.h>
 
 namespace revo {
 
@@ -25,7 +25,8 @@ namespace revo {
 		///<param name='title'>Title of the window</param>
 		///<param name='width'>Width of the window</param>
 		///<param name='height'>Height of the window</param>
+		///<param name='flags'>Flags that can be used by internal API.</param>
 		///<returns>Window pointer</returns>
-		virtual Window* create(std::string title, int width, int height) = 0;
+		virtual Window* create(std::string title, int width, int height, int flags = 0) = 0;
 	};
 }

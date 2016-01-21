@@ -4,15 +4,23 @@
 #include <exception>
 #include "Window.h"
 #include "CoreService.h"
+#include "Context.h"
+#include "AdaptedEnumerations.h"
+
+#ifdef REVOENGINE_EXPORTS
+#define REVOENGINE_API __declspec(dllexport)
+#else
+#define REVOENGINE_API __declspec(dllimport)
+#endif
 
 namespace revo {
 
-	class ServiceProvider
+	class REVOENGINE_API ServiceProvider
 	{
 	private:
 		std::vector<CoreService*> mCoreServices;
 		Window* mWindowService;
-
+		Context* mContext;
 	public:
 
 		///<summary>
@@ -37,14 +45,21 @@ namespace revo {
 		///<param name="title">Set title of the window</param>
 		///<param name="width">Set width of the window</param>
 		///<param name="height">Set height of the window</param>
+		///<param name='flags'>Flags that can be used by internal API.</param>
 		///<returns>Window pointer</returns>
-		Window* createWindow(std::string title, int width, int height);
+		Window* createWindow(std::string title, int width, int height, int flags = 0);
 
 		///<summary>
 		/// Add a core service implemented.
 		///</summary>
 		///<param name="coreService">A core service implementation</param>
 		void addCoreService(CoreService* coreService);
+
+		///<summary>
+		/// Add a core service implemented and init it.
+		///</summary>
+		///<param name="coreService">A core service implementation to be initialized</param>
+		void initCoreService(CoreService* coreService);
 
 		///<summary>
 		/// Initialize all core services on the pool in order.
@@ -55,6 +70,16 @@ namespace revo {
 		/// Terminate all core services on the pool in order.
 		///</summary>
 		void terminateCoreServices();
+
+		///<summary>
+		///Set the context to be used
+		///</summary>
+		void setContext(Context* context);
+
+		///<summary>
+		///get context to be used
+		///</summary>
+		Context* getContext();
 	};
 }
 

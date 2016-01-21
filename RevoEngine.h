@@ -9,6 +9,7 @@
 #include <src\Core\ServiceProvider.h>
 #include <src\Core\Window.h>
 
+
 #ifdef REVOENGINE_EXPORTS
 #define REVOENGINE_API __declspec(dllexport)
 #else
