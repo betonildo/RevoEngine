@@ -149,10 +149,8 @@
     <ClInclude Include="common_headers.h" />
     <ClInclude Include="RevoEngine.h" />
     <ClInclude Include="src\Core\AdaptedEnumerations.h" />
-    <ClInclude Include="src\Core\Context.h" />
     <ClInclude Include="src\Core\CoreService.h" />
     <ClInclude Include="src\Core\ServiceProvider.h" />
-    <ClInclude Include="src\Core\Specific\ContextOpenGL.h" />
     <ClInclude Include="src\Core\Specific\CoreServiceGLEW.h" />
     <ClInclude Include="src\Core\Specific\CoreServiceOpenGL.h" />
     <ClInclude Include="src\Core\Specific\CoreServiceSDL2.h" />
@@ -182,7 +180,6 @@
     </ClCompile>
     <ClCompile Include="RevoEngine.cpp" />
     <ClCompile Include="src\Core\ServiceProvider.cpp" />
-    <ClCompile Include="src\Core\Specific\ContextOpenGL.cpp" />
     <ClCompile Include="src\Core\Specific\CoreServiceGLEW.cpp" />
     <ClCompile Include="src\Core\Specific\CoreServiceOpenGL.cpp" />
     <ClCompile Include="src\Core\Specific\CoreServiceSDL2.cpp" />
@@ -211,6 +208,8 @@
   <ItemGroup>
     <None Include=".gitignore" />
     <None Include="ClassDiagram.cd" />
+    <None Include="DefaultResources\Shaders\Simple\Simple.frag" />
+    <None Include="DefaultResources\Shaders\Simple\Simple.vert" />
     <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

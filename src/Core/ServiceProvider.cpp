@@ -64,18 +64,5 @@ namespace revo {
 		}
 	}
 
-	void ServiceProvider::setContext(Context * context)
-	{
-		this->mContext = context;
-	}
-
-	Context * ServiceProvider::getContext()
-	{
-		if (this->mContext == NULL) {
-			throw new std::exception("Context is NULL");
-		}
-
-		return this->mContext;
-	}
 }
 

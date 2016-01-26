@@ -4,7 +4,6 @@
 #include <exception>
 #include "Window.h"
 #include "CoreService.h"
-#include "Context.h"
 #include "AdaptedEnumerations.h"
 
 #ifdef REVOENGINE_EXPORTS
@@ -20,7 +19,7 @@ namespace revo {
 	private:
 		std::vector<CoreService*> mCoreServices;
 		Window* mWindowService;
-		Context* mContext;
+
 	public:
 
 		///<summary>
@@ -70,16 +69,6 @@ namespace revo {
 		/// Terminate all core services on the pool in order.
 		///</summary>
 		void terminateCoreServices();
-
-		///<summary>
-		///Set the context to be used
-		///</summary>
-		void setContext(Context* context);
-
-		///<summary>
-		///get context to be used
-		///</summary>
-		Context* getContext();
 	};
 }
 

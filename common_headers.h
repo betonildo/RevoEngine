@@ -23,7 +23,9 @@
 #include <src\Core\Specific\CoreServiceOpenGL.h>
 #include <src\Core\Specific\WindowSDL2.h>
 #include <src\Core\AdaptedEnumerations.h>
-#include <src\Core\Specific\ContextOpenGL.h>
+
+// graphics
+#include <src\Graphics\Shader.h>
 
 
 // utils

@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>368</x>
-      <y>64</y>
+      <y>32</y>
       <w>336</w>
       <h>160</h>
     </coordinates>
@@ -38,7 +38,7 @@
     <id>Relation</id>
     <coordinates>
       <x>696</x>
-      <y>152</y>
+      <y>120</y>
       <w>200</w>
       <h>184</h>
     </coordinates>
@@ -49,7 +49,7 @@
     <id>Relation</id>
     <coordinates>
       <x>272</x>
-      <y>80</y>
+      <y>48</y>
       <w>112</w>
       <h>272</h>
     </coordinates>
@@ -60,9 +60,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>224</x>
-      <y>336</y>
+      <y>304</y>
       <w>112</w>
-      <h>72</h>
+      <h>104</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Interface&gt;&gt;
 revo::CoreService
@@ -75,7 +75,7 @@ revo::CoreService
     <id>UMLNote</id>
     <coordinates>
       <x>144</x>
-      <y>208</y>
+      <y>176</y>
       <w>112</w>
       <h>56</h>
     </coordinates>
@@ -89,7 +89,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>192</x>
-      <y>256</y>
+      <y>224</y>
       <w>64</w>
       <h>96</h>
     </coordinates>
@@ -100,7 +100,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>328</y>
+      <y>280</y>
       <w>184</w>
       <h>24</h>
     </coordinates>
@@ -116,7 +116,7 @@ revo::adapter::CoreServiceSDL2
     <id>Relation</id>
     <coordinates>
       <x>96</x>
-      <y>344</y>
+      <y>296</y>
       <w>144</w>
       <h>32</h>
     </coordinates>
@@ -127,7 +127,7 @@ revo::adapter::CoreServiceSDL2
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>384</y>
+      <y>320</y>
       <w>184</w>
       <h>24</h>
     </coordinates>
@@ -142,18 +142,18 @@ revo::adapter::CoreServiceGLEW
     <id>Relation</id>
     <coordinates>
       <x>96</x>
-      <y>368</y>
+      <y>336</y>
       <w>144</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>160.0;10.0;10.0;10.0;10.0;20.0</additional_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>544</x>
-      <y>320</y>
+      <y>288</y>
       <w>184</w>
       <h>24</h>
     </coordinates>
@@ -169,7 +169,7 @@ revo::adapter::WindowSDL2
     <id>Relation</id>
     <coordinates>
       <x>624</x>
-      <y>336</y>
+      <y>304</y>
       <w>144</w>
       <h>32</h>
     </coordinates>
@@ -180,7 +180,7 @@ revo::adapter::WindowSDL2
     <id>UMLClass</id>
     <coordinates>
       <x>752</x>
-      <y>320</y>
+      <y>288</y>
       <w>288</w>
       <h>80</h>
     </coordinates>
@@ -196,35 +196,29 @@ revo::Window
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>408</x>
-      <y>432</y>
-      <w>528</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>Context
---
-generateBuffers(howMany:uint):std::vector&lt;uint&gt;
-generateBuffer():uint
-deleteBuffers(buffers:std::vector&lt;uint&gt;):void
-deleteBuffer(buffer:uint):void
-enableVertexAttribArray(channel:uint):void	
-bindBuffer(bufferType:uint, bufferPtr:uint):void
-vertexAttribPointer(attrib:uint, size:uint, type:uint, normalized:uint, stride:uint, arrayBufferOffset:uint):void
-drawElements(mode:uint, count:uint, type:uint, elementArrayBufferOffset:uint):void
-disableVertexAttribArray(channel:uint):void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>216</y>
-      <w>24</w>
-      <h>232</h>
+      <x>96</x>
+      <y>376</y>
+      <w>144</w>
+      <h>32</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;270.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>360</y>
+      <w>184</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>//This class implements
+//the core service
+//adaptition to use GLEW.
+revo::adapter::CoreServiceOpenGL
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

@@ -17,22 +17,17 @@ namespace revo {
 		void CoreServiceOpenGL::initialize()
 		{
 			
-			//TODO: Make a auto adaptition for any system
 			// Set our OpenGL version.
-			
-			
-			
+			// SDL_GL_CONTEXT_CORE gives us only the newer version, deprecated functions are disabled
+			SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+
 			// 3.2 is part of the modern versions of OpenGL, but most video cards whould be able to run it
-			//SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
-			//SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
-			
+			SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+			SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+
 			// Turn on double buffering with a 24bit Z buffer.
 			// You may need to change this to 16 or 32 for your system
-			//SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-
-			
-			// SDL_GL_CONTEXT_CORE gives us only the newer version, deprecated functions are disabled
-			SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
+			SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
 			this->mHasInit = true;
 		}

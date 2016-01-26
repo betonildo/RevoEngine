@@ -51,12 +51,6 @@
     <ClInclude Include="src\Core\AdaptedEnumerations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Context.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\Specific\ContextOpenGL.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Graphics\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -95,9 +89,6 @@
     <ClCompile Include="src\Core\Specific\CoreServiceOpenGL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Specific\ContextOpenGL.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Graphics\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -112,5 +103,7 @@
     <None Include=".gitignore" />
     <None Include="README.md" />
     <None Include="ClassDiagram.cd" />
+    <None Include="DefaultResources\Shaders\Simple\Simple.frag" />
+    <None Include="DefaultResources\Shaders\Simple\Simple.vert" />
   </ItemGroup>
 </Project>
