@@ -1,5 +1,5 @@
 #pragma once
-#include "common_headers.h"
+#include "definitions.h"
 
 namespace revo {
 	namespace graphics {
@@ -12,7 +12,7 @@ namespace revo {
 			Shader();
 			~Shader();
 
-			void simpleLoad(const char* vertPath, const char* fragPath);
+			void simpleLoad(cstring vertPath, cstring fragPath);
 			void simpleUse();
 		};
 	}

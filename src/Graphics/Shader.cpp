@@ -13,12 +13,12 @@ namespace revo {
 		Shader::~Shader()
 		{
 		}
-		void Shader::simpleLoad(const char * vertPath, const char * fragPath)
+		void Shader::simpleLoad(cstring vertPath, cstring fragPath)
 		{
 
 			// Create the shaders
-			GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
-			GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
+			uint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
+			uint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 
 			// Read the Vertex Shader code from the file
 			std::string VertexShaderCode = revo::utils::File::readAllText(vertPath);
@@ -28,7 +28,7 @@ namespace revo {
 
 
 
-			GLint Result = GL_FALSE;
+			int Result = GL_FALSE;
 			int InfoLogLength;
 
 

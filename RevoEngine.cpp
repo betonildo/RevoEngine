@@ -4,6 +4,8 @@
 #include "stdafx.h"
 #include "RevoEngine.h"
 
+using namespace revo::maths;
+
 // This is the constructor of a class that has been exported.
 // see RevoEngine.h for the class definition
 CRevoEngine::CRevoEngine()
@@ -35,15 +37,35 @@ void CRevoEngine::handleUpdate(std::function<void()> onUpdate)
 int CRevoEngine::run()
 {
 
-	static const GLfloat triangle[] = {
+	Vector3 vertices[8] = {
 		//x		y	  z
-		-1.0f, -1.0f, 0.0f,		
-		1.0f, -1.0f, 0.0f,
-		0.0f, 1.0f, 0.0f,
+		Vector3(-0.5f, -0.5f, 0.5f),
+		Vector3(0.5f, -0.5f, 0.5f),
+		Vector3(0.5f, 0.5f, 0.5f),
+		Vector3(-0.5f, 0.5f, 0.5f),
+		Vector3(-0.5f, 0.5f, -0.5f),
+		Vector3(-0.5f, -0.5f, -0.5f),
+		Vector3(0.5f, -0.5f, -0.5f),
+		Vector3(0.5f, 0.5f, -0.5f),
 	};
 
+	Matrix4x4 m(1.0f);
+	m[0][1] = 2.0f;
+	m(1, 2) = 2.0f;
+
+	vertices[0] = Vector3::Cross(vertices[0], vertices[1]) * 5;
+	std::cout << "Cross: " << vertices[0] << std::endl;	
+	std::cout << "Dot: " << Vector3::Dot(vertices[0], vertices[1]) << std::endl;
+	std::cout << m << std::endl;
+	float* values = &vertices[0].x();
+	std::cout << values[0] << ", " << values[1] << ", " << values[2] << std::endl;
+	 
+
+
 	static const unsigned short elements[] = {
+		
 		0, 1, 2,
+		0, 2, 3
 	};
 
 	// Dark blue background
@@ -62,7 +84,7 @@ int CRevoEngine::run()
 	uint vertexBuffer;
 	glGenBuffers(1, &vertexBuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(triangle), triangle, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 	uint elementBuffer;
 	glGenBuffers(1, &elementBuffer);
@@ -71,7 +93,6 @@ int CRevoEngine::run()
 
 	revo::graphics::Shader shader;
 	shader.simpleLoad("C:/DefaultResources/Shaders/Simple/Simple.vert", "C:/DefaultResources/Shaders/Simple/Simple.frag");
-
 
 	while (!mWindow->closed()) {
 		
@@ -82,12 +103,12 @@ int CRevoEngine::run()
 
 
 		glEnableVertexAttribArray(0);
-		glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
+		glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);		
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-
+		
 		// Index buffer
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementBuffer);
-		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
+		glDrawElements(GL_TRIANGLES, sizeof(elements), GL_UNSIGNED_SHORT, 0);
 
 		glDisableVertexAttribArray(0);
 

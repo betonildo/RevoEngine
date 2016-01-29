@@ -27,6 +27,10 @@
 // graphics
 #include <src\Graphics\Shader.h>
 
+//maths
+#include <src\Maths\Vector3.h>
+#include <src\Maths\Vector2.h>
+#include <src\Maths\Matrix4x4.h>
 
 // utils
 #include <src\Utils\File.h>
