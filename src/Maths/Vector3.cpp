@@ -39,5 +39,10 @@ namespace revo {
 		{
 			return mVector;
 		}
+
+		Vector3 Vector3::normalize()
+		{
+			return Vector3();
+		}
 	}
 }

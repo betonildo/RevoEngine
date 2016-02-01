@@ -49,16 +49,18 @@ int CRevoEngine::run()
 		Vector3(0.5f, 0.5f, -0.5f),
 	};
 
-	Matrix4x4 m(1.0f);
-	m[0][1] = 2.0f;
-	m(1, 2) = 2.0f;
+	Matrix4x4 m(1.0f), m1;
+	
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			m[j][i] = 2 + i * j;
+			m1[i][j] = 2 + i * j;
+		}
+	}
+	
 
-	vertices[0] = Vector3::Cross(vertices[0], vertices[1]) * 5;
-	std::cout << "Cross: " << vertices[0] << std::endl;	
-	std::cout << "Dot: " << Vector3::Dot(vertices[0], vertices[1]) << std::endl;
-	std::cout << m << std::endl;
-	float* values = &vertices[0].x();
-	std::cout << values[0] << ", " << values[1] << ", " << values[2] << std::endl;
+	std::cout << "Matrix multiply" << std::endl;
+	std::cout << (m * m1) << std::endl;
 	 
 
 

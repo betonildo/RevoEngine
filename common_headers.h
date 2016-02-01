@@ -28,6 +28,7 @@
 #include <src\Graphics\Shader.h>
 
 //maths
+#include <src\Maths\Vector4.h>
 #include <src\Maths\Vector3.h>
 #include <src\Maths\Vector2.h>
 #include <src\Maths\Matrix4x4.h>

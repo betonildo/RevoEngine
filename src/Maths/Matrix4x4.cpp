@@ -5,6 +5,10 @@ namespace revo {
 	namespace maths {
 		Matrix4x4::Matrix4x4()
 		{
+			mMatrix[0] = mMatrix[5] = mMatrix[10] = mMatrix[15] = 1;
+			mMatrix[1] = mMatrix[2] = mMatrix[3] = mMatrix[4] = 0;
+			mMatrix[6] = mMatrix[7] = mMatrix[8] = mMatrix[9] = 0;
+			mMatrix[11] = mMatrix[12] = mMatrix[13] = mMatrix[14] = 0;
 		}
 
 		Matrix4x4::Matrix4x4(float mainColunmValue)
@@ -44,14 +48,10 @@ namespace revo {
 		{
 			return (mMatrix + (index * 4));
 		}
+
 		float & Matrix4x4::operator()(uint i, uint j)
 		{
 			return mMatrix[i * 4 + j];
-		}
-
-		Matrix4x4::operator const float*() const
-		{
-			return mMatrix;
 		}
 	}
 }
