@@ -12,8 +12,9 @@ namespace revo {
 			Shader();
 			~Shader();
 
-			void simpleLoad(const char* vertPath, const char* fragPath);
-			void simpleUse();
+			void load(const char* vertPath, const char* fragPath);
+			void bind();
+			void unbind();
 		};
 	}
 }

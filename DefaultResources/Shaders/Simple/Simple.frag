@@ -2,6 +2,9 @@
 
 out vec3 color;
 
+in vec3 vertColor;
+
+
 void main(){
-	color = vec3(1,0,0);
+	color = vertColor;
 }

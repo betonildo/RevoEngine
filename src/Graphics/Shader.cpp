@@ -12,8 +12,10 @@ namespace revo {
 
 		Shader::~Shader()
 		{
+			glDeleteShader(this->mProgram);
 		}
-		void Shader::simpleLoad(const char * vertPath, const char * fragPath)
+
+		void Shader::load(const char * vertPath, const char * fragPath)
 		{
 
 			// Create the shaders
@@ -88,9 +90,13 @@ namespace revo {
 			glDeleteShader(FragmentShaderID);
 		}
 
-		void Shader::simpleUse()
+		void Shader::bind()
 		{
 			glUseProgram(this->mProgram);
+		}
+		void Shader::unbind()
+		{
+			glUseProgram(0);
 		}
 	}
 }

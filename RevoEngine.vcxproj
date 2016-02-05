@@ -158,6 +158,9 @@
     <ClInclude Include="src\Core\Window.h" />
     <ClInclude Include="definitions.h" />
     <ClInclude Include="src\Graphics\Shader.h" />
+    <ClInclude Include="src\Maths\Vector2.h" />
+    <ClInclude Include="src\Maths\Vector3.h" />
+    <ClInclude Include="src\Maths\Vector4.h" />
     <ClInclude Include="src\Utils\File.h" />
     <ClInclude Include="src\Utils\GLErrorCheck.h" />
     <ClInclude Include="stdafx.h" />
@@ -185,6 +188,9 @@
     <ClCompile Include="src\Core\Specific\CoreServiceSDL2.cpp" />
     <ClCompile Include="src\Core\Specific\WindowSDL2.cpp" />
     <ClCompile Include="src\Graphics\Shader.cpp" />
+    <ClCompile Include="src\Maths\Vector2.cpp" />
+    <ClCompile Include="src\Maths\Vector3.cpp" />
+    <ClCompile Include="src\Maths\Vector4.cpp" />
     <ClCompile Include="src\Utils\File.cpp" />
     <ClCompile Include="src\Utils\GLErrorCheck.cpp" />
     <ClCompile Include="stdafx.cpp">
