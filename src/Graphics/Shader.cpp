@@ -88,6 +88,7 @@ namespace revo {
 
 			glDeleteShader(VertexShaderID);
 			glDeleteShader(FragmentShaderID);
+
 		}
 
 		void Shader::bind()

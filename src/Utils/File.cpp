@@ -34,5 +34,38 @@ namespace revo {
 
 			return composedString;
 		}
+
+		void * File::readAllBytes(std::string path)
+		{
+			FILE* fileDescriptor = fopen(path.c_str(), "rb+");
+			fseek(fileDescriptor, 0, SEEK_END);
+			size_t length = ftell(fileDescriptor);
+			fseek(fileDescriptor, 0, SEEK_SET);
+
+			void* buffer = new unsigned char[length];
+
+			fread(buffer, 1, length, fileDescriptor);
+
+			fclose(fileDescriptor);
+
+			return buffer;
+		}
+
+		void File::writeAllBytes(std::string path, const void * bytes, unsigned int length)
+		{
+			FILE* fileDescriptor = fopen(path.c_str(), "wb+");
+			fwrite(bytes, 1, length, fileDescriptor);
+			fclose(fileDescriptor);
+		}
+
+		bool File::exists(std::string path)
+		{
+			FILE* fd = fopen(path.c_str(), "r");
+			if (fd != NULL) {
+				fclose(fd);
+				return true;
+			}
+			return false;
+		}
 	}
 }

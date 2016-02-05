@@ -15,6 +15,8 @@ namespace revo {
 			void load(const char* vertPath, const char* fragPath);
 			void bind();
 			void unbind();
+
+			
 		};
 	}
 }

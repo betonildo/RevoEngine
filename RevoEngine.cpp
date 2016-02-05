@@ -36,30 +36,8 @@ void CRevoEngine::handleUpdate(std::function<void()> onUpdate)
 int CRevoEngine::run()
 {
 	using namespace revo::maths;
+	using namespace revo::utils;
 
-
-	Vector2 u(0, 0);
-	Vector2 v(2, 2);
-
-
-	Vector2 addres = u + v;
-	Vector2 divres = addres / u;
-	divres.x = 1;
-	divres.y = 1;
-
-	std::cout << addres << std::endl;
-	std::cout << addres * v << std::endl;
-	std::cout << divres << std::endl;
-	std::cout << divres - addres << std::endl;
-
-	float* vector = (float*)addres;
-	vector[0] = 19;
-	vector[1] = 19;
-
-	std::cout << addres << std::endl;
-
-	system("PAUSE");
-	return 0;
 
 	static const GLfloat triangle[] = {
 		//x		y	  z
