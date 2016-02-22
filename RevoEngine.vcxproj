@@ -215,7 +215,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
-    <None Include="ClassDiagram.cd" />
     <None Include="DefaultResources\Shaders\Simple\Simple.frag" />
     <None Include="DefaultResources\Shaders\Simple\Simple.vert" />
     <None Include="README.md" />

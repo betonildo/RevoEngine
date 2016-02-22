@@ -9,7 +9,7 @@ namespace revo {
 			union 
 			{
 				float elements[4][4];
-				float _elements[4 * 4];
+				float _e[4 * 4];
 			};
 			
 		public:
@@ -21,11 +21,12 @@ namespace revo {
 			operator const float*() const;
 			operator float*();
 
+			// matrix4 operations for self containing
 
 
 			// matrix4 operations
-			static Matrix4 ortho(float left, float right, float bottom, float top, float near, float far);
-			static Matrix4 perspective(float fieldOfView, float aspectRatio, float near, float far);
+			static Matrix4 ortho(float left, float right, float bottom, float top, float near_plane, float far_plane);
+			static Matrix4 perspective(float fieldOfView, float aspectRatio, float near_plane, float far_plane);
 			
 
 			// arithmetic by similar
@@ -36,6 +37,21 @@ namespace revo {
 
 			// arithmetic by vector4
 			friend Vector4 operator*(const Matrix4& m1, const Vector4& v);
+
+			//acces operator, converting internally to a transposed matrix like access method
+			// Access to the reference of the element
+			inline float& operator()(int i, int j){
+				return _e[i + j * 4];
+			}
+
+			// access to the constant reference of the element
+			inline const float& operator()(int i, int j) const {
+				return _e[i + j * 4];
+			}
+
+			/// simple pre compiled access to elements
+#define		el(m,i,j) m._e[i + j * 4]
+
 		};
 	}
 }

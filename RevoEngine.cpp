@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "RevoEngine.h"
 #include "src/Maths/Vector2.h"
+#include "src/Maths/Matrix4.h"
 
 // This is the constructor of a class that has been exported.
 // see RevoEngine.h for the class definition
@@ -75,6 +76,10 @@ int CRevoEngine::run()
 
 	revo::graphics::Shader shader;
 	shader.load("C:/DefaultResources/Shaders/Simple/Simple.vert", "C:/DefaultResources/Shaders/Simple/Simple.frag");
+
+	Matrix4 m1(1), m2(2);
+
+	auto ortho = Matrix4::ortho(1, 1, 1, 1, 0.01, 1000.0);
 
 
 	while (!mWindow->closed()) {
