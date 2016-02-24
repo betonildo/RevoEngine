@@ -77,11 +77,7 @@ int CRevoEngine::run()
 	revo::graphics::Shader shader;
 	shader.load("C:/DefaultResources/Shaders/Simple/Simple.vert", "C:/DefaultResources/Shaders/Simple/Simple.frag");
 
-	Matrix4 m1(1), m2(2);
-
-	auto ortho = Matrix4::ortho(1, 1, 1, 1, 0.01, 1000.0);
-
-
+	
 	while (!mWindow->closed()) {
 		
 
@@ -89,6 +85,9 @@ int CRevoEngine::run()
 		
 		shader.bind();
 		
+		Matrix4 MVP = Matrix4::perspective(45, 800 / 600, 0.1, 100) * Matrix4(1.0) * Matrix4(1.0);
+		shader.setMatrix4("ModelViewProjectionMatrix", MVP);
+
 		glEnableVertexAttribArray(0);
 		glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);

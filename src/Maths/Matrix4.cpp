@@ -57,7 +57,15 @@ namespace revo {
 
 		Matrix4 Matrix4::perspective(float fieldOfView, float aspectRatio, float near_plane, float far_plane)
 		{
-			return Matrix4();
+			Matrix4 res;
+			float Scale = 1 / tan(fieldOfView * 0.5 * M_PI / 180);
+			el(res, 0, 0) = Scale; // scale the x coordinates of the projected point 
+			el(res, 1, 1) = Scale; // scale the y coordinates of the projected point 
+			el(res, 2, 2) = -far_plane / (far_plane - near_plane); // used to remap z to [0,1] 
+			el(res, 3, 2) = -far_plane * near_plane / (far_plane - near_plane); // used to remap z [0,1] 
+			el(res, 2, 3) = -1; // set w = -z 
+			el(res, 3, 3) = 0;
+			return res;
 		}
 
 		Matrix4 operator*(const Matrix4 & m1, const Matrix4 & m2)

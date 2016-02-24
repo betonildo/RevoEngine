@@ -8,8 +8,15 @@ uniform float b = 1;
 
 out vec3 vertColor;
 
+//matrices
+//uniform mat4 ProjectionMatrix;
+//uniform mat4 ModelMatrix;
+//uniform mat4 ViewMatrix;
+//uniform mat4 ModelViewMatrix;
+uniform mat4 ModelViewProjectionMatrix;
+
 void main(){
 	vertColor = vec3(r,g,b);
-	gl_Position.xyz = vertexPosition_modelspace;
-	gl_Position.w = 1.0;
+	// transform vertex to world position
+	gl_Position = ModelViewProjectionMatrix * vec4(vertexPosition_modelspace, 1.0);	
 }

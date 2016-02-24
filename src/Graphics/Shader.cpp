@@ -2,6 +2,7 @@
 #include "Shader.h"
 
 using namespace std;
+using namespace revo::maths;
 
 namespace revo {
 	namespace graphics {
@@ -98,6 +99,11 @@ namespace revo {
 		void Shader::unbind()
 		{
 			glUseProgram(0);
+		}
+
+		void Shader::setMatrix4(const char * uniformKey, const Matrix4 & m)
+		{
+			glUniformMatrix4fv(glGetUniformLocation(this->mProgram, uniformKey), 1, GL_FALSE, m);
 		}
 	}
 }

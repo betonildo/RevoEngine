@@ -1,6 +1,7 @@
 #pragma once
 #include "Vector3.h"
 #include "Vector4.h"
+#define TRANSPOSED
 
 namespace revo {
 	namespace maths {
@@ -50,8 +51,11 @@ namespace revo {
 			}
 
 			/// simple pre compiled access to elements
-#define		el(m,i,j) m._e[i + j * 4]
-
+#ifdef TRANSPOSED
+	#define		el(m,i,j) m._e[i + j * 4]
+#else
+	#define		el(m,i,j) m._e[i + j * 4]
+#endif
 		};
 	}
 }
