@@ -37,6 +37,7 @@ int CRevoEngine::run()
 {
 	using namespace revo::maths;
 	using namespace revo::utils;
+	using namespace revo::graphics;
 
 
 	static const GLfloat triangle[] = {
@@ -73,10 +74,20 @@ int CRevoEngine::run()
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementBuffer);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(elements), elements, GL_STATIC_DRAW);
 
-	revo::graphics::Shader shader;
-	shader.load("C:/DefaultResources/Shaders/Simple/Simple.vert", "C:/DefaultResources/Shaders/Simple/Simple.frag");
+	std::string executablePath = std::string(SDL_GetBasePath());
+	std::string vertShaderPath = executablePath + "DefaultResources/Shaders/Simple/Simple.vert";
+	std::string fragShaderPath = executablePath + "DefaultResources/Shaders/Simple/Simple.frag";
 
+	Shader shader;
+	shader.attachComponent(GL_FRAGMENT_SHADER, fragShaderPath);
+	shader.attachComponent(GL_VERTEX_SHADER, vertShaderPath);
 
+	shader.linkAll();
+
+	revo::core::containers::Array<Vector2, 8> vectors;
+
+	std::cout << "Vector: " << vectors[0].x << std::endl;
+		
 	while (!mWindow->closed()) {
 		
 

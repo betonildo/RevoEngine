@@ -72,6 +72,12 @@
     <ClInclude Include="src\Maths\Vector4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Graphics\ShaderComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Containers\Array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -116,11 +122,13 @@
     <ClCompile Include="src\Maths\Vector4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Graphics\ShaderComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
     <None Include="README.md" />
-    <None Include="ClassDiagram.cd" />
     <None Include="DefaultResources\Shaders\Simple\Simple.frag" />
     <None Include="DefaultResources\Shaders\Simple\Simple.vert" />
   </ItemGroup>

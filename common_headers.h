@@ -23,10 +23,16 @@
 #include <src\Core\Specific\CoreServiceOpenGL.h>
 #include <src\Core\Specific\WindowSDL2.h>
 #include <src\Core\AdaptedEnumerations.h>
+#include <src\Core\Containers\Array.h>
 
 // graphics
 #include <src\Graphics\Shader.h>
+#include <src\Graphics\ShaderComponent.h>
 
+// maths
+#include <src\Maths\Vector2.h>
+#include <src\Maths\Vector2.h>
+#include <src\Maths\Vector4.h>
 
 // utils
 #include <src\Utils\File.h>

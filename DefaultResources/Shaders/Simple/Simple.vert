@@ -8,7 +8,10 @@ uniform float b = 1;
 
 out vec3 vertColor;
 
+varying vec3 vertexPosition; 
+
 void main(){
+	vertexPosition = vertexPosition_modelspace;
 	vertColor = vec3(r,g,b);
 	gl_Position.xyz = vertexPosition_modelspace;
 	gl_Position.w = 1.0;
