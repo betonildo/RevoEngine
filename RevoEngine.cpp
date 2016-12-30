@@ -3,7 +3,9 @@
 
 #include "stdafx.h"
 #include "RevoEngine.h"
+#include "src/Core/Containers/Array.h"
 #include "src/Maths/Vector2.h"
+#include "src/Maths/Vector3.h"
 
 // This is the constructor of a class that has been exported.
 // see RevoEngine.h for the class definition
@@ -25,7 +27,6 @@ void CRevoEngine::initSystem()
 	
 	mServices.initCoreService(new revo::adapter::CoreServiceOpenGL());
 	mServices.initCoreService(new revo::adapter::CoreServiceGLEW());
-
 }
 
 void CRevoEngine::handleUpdate(std::function<void()> onUpdate)
@@ -38,14 +39,18 @@ int CRevoEngine::run()
 	using namespace revo::maths;
 	using namespace revo::utils;
 	using namespace revo::graphics;
+	using namespace revo::core::containers;
 
-
-	static const GLfloat triangle[] = {
+	static const float triangle[] = {
 		//x		y	  z
 		-1.0f, -1.0f, 0.0f,		
 		1.0f, -1.0f, 0.0f,
 		0.0f, 1.0f, 0.0f,
 	};
+
+	Array<Vector3, 3> triangle_arr;
+
+	triangle_arr.Memcopy((void*)triangle);
 
 	static const unsigned short elements[] = {
 		0, 1, 2,
@@ -63,11 +68,10 @@ int CRevoEngine::run()
 	// Cull triangles which normal is not towards the camera
 	glEnable(GL_CULL_FACE);
 
-
 	uint vertexBuffer;
 	glGenBuffers(1, &vertexBuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(triangle), triangle, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, triangle_arr.ByteSize(), triangle_arr.Elements(), GL_STATIC_DRAW);
 
 	uint elementBuffer;
 	glGenBuffers(1, &elementBuffer);
@@ -79,22 +83,22 @@ int CRevoEngine::run()
 	std::string fragShaderPath = executablePath + "DefaultResources/Shaders/Simple/Simple.frag";
 
 	Shader shader;
-	shader.attachComponent(GL_FRAGMENT_SHADER, fragShaderPath);
-	shader.attachComponent(GL_VERTEX_SHADER, vertShaderPath);
-
+	shader.attachComponent(VERTEXSHADER, vertShaderPath);
+	shader.attachComponent(FRAGMENTSHADER, fragShaderPath);
 	shader.linkAll();
+	
+	Vector4 color(0.5f, 0.5f, 0.5f, 1.0f);
+	uint colorMult = shader.getUniformLocation("colorMult");
 
-	revo::core::containers::Array<Vector2, 8> vectors;
-
-	std::cout << "Vector: " << vectors[0].x << std::endl;
-		
 	while (!mWindow->closed()) {
-		
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
 		shader.bind();
-		
+	
+		// uniforms need to be set every time we bind a shader ( both below works correctly)
+		shader.setUniform(colorMult, color);
+
 		glEnableVertexAttribArray(0);
 		glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);

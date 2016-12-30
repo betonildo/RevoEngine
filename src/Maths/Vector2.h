@@ -4,7 +4,9 @@
 
 namespace revo {
 	namespace maths {
-		struct Vector2 {
+		class Vector2 {
+		
+		public:
 			float x, y;
 
 			Vector2();
@@ -15,6 +17,7 @@ namespace revo {
 			operator const float*() const;
 			operator float*();
 
+			Vector2 operator=(const Vector2& u);
 			friend Vector2 operator+(const Vector2& u, const Vector2& v);
 			friend Vector2 operator-(const Vector2& u, const Vector2& v);
 			friend Vector2 operator*(const Vector2& u, const Vector2& v);

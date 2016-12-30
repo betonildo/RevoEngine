@@ -39,6 +39,15 @@ namespace revo {
 			return &x;
 		}
 
+		const Vector4& Vector4::operator=(const Vector4 & v)
+		{
+			this->x = v.x;
+			this->x = v.x;
+			this->x = v.x;
+			this->x = v.x;
+			return *this;
+		}
+
 
 		Vector4 operator+(const Vector4 & u, const Vector4 & v)
 		{

@@ -1,11 +1,11 @@
 #version 330 core
 
-out vec3 color;
+out vec4 color;
 
-in vec3 vertColor;
+uniform vec4 colorMult;
 
 varying vec3 vertexPosition;
 
 void main(){
-	color = vertexPosition + vec3(1,1,1);
+	color = vec4(vertexPosition, 1) * colorMult;
 }

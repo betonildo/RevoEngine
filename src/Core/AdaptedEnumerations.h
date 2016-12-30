@@ -1,10 +1,6 @@
 #pragma once
 
-#define SDL2
-
-#ifdef SDL2
-	#include <SDL.h>
-#endif
+#include <definitions.h>
 
 namespace revo {
 	struct Flags {

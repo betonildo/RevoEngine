@@ -1,17 +1,12 @@
 #pragma once
 
-#include <GL\glew.h>
-#include <SDL_opengl.h>
-#include <SDL.h>
+//defines
+#include <definitions.h>
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <exception>
-
-//defines
-#include <definitions.h>
-
 
 #include <src\Core\ServiceProvider.h>
 #include <src\Core\Window.h>
@@ -23,7 +18,6 @@
 #include <src\Core\Specific\CoreServiceOpenGL.h>
 #include <src\Core\Specific\WindowSDL2.h>
 #include <src\Core\AdaptedEnumerations.h>
-#include <src\Core\Containers\Array.h>
 
 // graphics
 #include <src\Graphics\Shader.h>
@@ -31,7 +25,7 @@
 
 // maths
 #include <src\Maths\Vector2.h>
-#include <src\Maths\Vector2.h>
+#include <src\Maths\Vector3.h>
 #include <src\Maths\Vector4.h>
 
 // utils

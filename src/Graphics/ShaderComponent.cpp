@@ -18,9 +18,14 @@ namespace revo {
 			
 		}
 
+		ShaderComponent::ShaderComponent(const ShaderComponent & other) {
+
+			(*this) = other;
+		}
+
 		ShaderComponent::~ShaderComponent() {			
 			glDeleteShader(this->bufferID);
-			std::cout << "Deleted buffer ID" << std::endl;
+			DPRINTLN("Deleted buffer ID");
 		}
 
 		void ShaderComponent::initBuffer(uint BUFFER_TYPE) {
@@ -31,16 +36,26 @@ namespace revo {
 
 			// Instantiate buffer id
 			this->attachToBufferAndCompileShaderSource(shaderComponentSource);
+			this->extractUniformNames(shaderComponentSource);
 		}
 
 		void ShaderComponent::loadShaderSourceFromPath(const std::string& shaderComponentPath) {
 			std::string shaderSource = revo::utils::File::readAllText(shaderComponentPath);
 			this->compileFromSource(shaderSource);
-			std::cout << "Compiling shader: " <<  shaderComponentPath << std::endl;
+			DPRINTLN("Compiling shader: " + shaderComponentPath);
 		}
 
 		const GLuint& ShaderComponent::getShaderBufferID() {
 			return this->bufferID;
+		}
+
+		const std::vector<String>& ShaderComponent::getUniformNames() const {
+			return this->uniformNames;
+		}
+
+		const ShaderComponent & ShaderComponent::operator=(const ShaderComponent & other) {
+
+			bufferID = other.bufferID;
 		}
 
 		void ShaderComponent::logFromBuffer() {
@@ -54,7 +69,32 @@ namespace revo {
 			if (InfoLogLength > 0) {
 				std::vector<char> shaderComponentErrorMessage(InfoLogLength + 1);
 				glGetShaderInfoLog(this->bufferID, InfoLogLength, NULL, &shaderComponentErrorMessage[0]);
-				printf("%s\n", &shaderComponentErrorMessage[0]);
+				DPRINTLN(&shaderComponentErrorMessage[0]);
+			}
+		}
+		void ShaderComponent::extractUniformNames(const std::string & shaderSourceCode) {
+			
+			using namespace revo::utils;
+			const char* UNIFORM = "uniform";
+			std::vector<wchar_t> delimitators;
+			delimitators.push_back(' ');
+			delimitators.push_back(';');
+			delimitators.push_back('=');
+			delimitators.push_back('\n');
+
+			std::vector<String> lines = String(shaderSourceCode).split('\n');
+
+			for (uint i = 0; i < lines.size(); i++) {
+				
+				String line = lines[i];
+				// has uniform
+				if (line.contains(UNIFORM)) {
+					
+					// get uniform name and append it to uniforms names
+					std::vector<String> lineComponents = line.split(' ');
+					String uniformName = lineComponents[2].copyUntilFind(delimitators);
+					this->uniformNames.push_back(uniformName);
+				}
 			}
 		}
 	}

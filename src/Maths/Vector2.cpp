@@ -35,6 +35,13 @@ namespace revo {
 			return &x;
 		}
 
+		Vector2 Vector2::operator=(const Vector2 & u)
+		{
+			this->x = u.x;
+			this->y = u.y;
+			return *this;
+		}
+
 		Vector2 operator+(const Vector2 & u, const Vector2 & v)
 		{
 			return Vector2(u.x + v.x, u.y + v.y);
